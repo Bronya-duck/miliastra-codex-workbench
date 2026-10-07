@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "miliastra": {
+      "command": "node",
+      "args": ["<absolute-clone-path>/runtime/server.mjs"],
+      "cwd": "<absolute-clone-path>/runtime",
+      "env": { "MILIASTRA_DATA_DIR": "<absolute-data-directory>" }
+    }
+  }
+}

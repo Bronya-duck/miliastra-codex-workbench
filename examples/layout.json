@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "title": "双人收集 · HUD 与帮助面板（原创结构演示）",
+  "stage_id": "P2",
+  "canvas": { "width": 1600, "height": 900, "origin": "bottom-left", "unit": "ui", "devices": [{ "id": "pc", "width": 1600, "height": 900 }, { "id": "touch", "width": 1600, "height": 900 }] },
+  "assumptions": ["数值和外观仅为设计示例", "客户端宿主、脚本及实际引擎属性需另行查询和配置", "预览不是编辑器模拟器"],
+  "controls": [
+    { "id": "Root", "name": "CollectUI", "type": "容器节点控件", "parent": null, "position": { "x": 800, "y": 450, "space": "canvas" }, "size": { "width": 1600, "height": 900 }, "render": { "scope": "client-host", "order": 0 }, "state": { "active": true, "visible": true, "interactable": false }, "properties": { "宿主": "待配置客户端控件容器", "脚本": "待创建 CollectUI.lua" } },
+    { "id": "HUD", "name": "HUD", "type": "容器节点控件", "parent": "Root", "position": { "x": 0, "y": 280, "space": "parent-center" }, "size": { "width": 670, "height": 88 }, "render": { "scope": "client-host", "order": 0 }, "appearance": { "bg_color": "#1c2940e8" }, "state": { "active": true, "visible": true, "interactable": false }, "overrides": { "touch": { "size": { "width": 720, "height": 100 } } } },
+    { "id": "Count", "name": "CollectedText", "type": "文本框控件", "parent": "HUD", "position": { "x": -205, "y": 0, "space": "parent-center" }, "size": { "width": 210, "height": 60 }, "render": { "scope": "client-host", "order": 0 }, "appearance": { "text": "已收集 3 / 20", "font_size": 25, "text_color": "#ffffff" }, "state": { "active": true, "visible": true, "interactable": false }, "properties": { "数据来源": "服务端 collected_count，只读展示" } },
+    { "id": "Time", "name": "RemainingText", "type": "文本框控件", "parent": "HUD", "position": { "x": 15, "y": 0, "space": "parent-center" }, "size": { "width": 190, "height": 60 }, "render": { "scope": "client-host", "order": 1 }, "appearance": { "text": "剩余 47 秒", "font_size": 25, "text_color": "#ffe0a5" }, "state": { "active": true, "visible": true, "interactable": false }, "properties": { "数据来源": "服务端 remaining_seconds，只读展示" } },
+    { "id": "Help", "name": "HelpButton", "type": "预设按钮控件", "parent": "HUD", "position": { "x": 245, "y": 0, "space": "parent-center" }, "size": { "width": 128, "height": 60 }, "render": { "scope": "client-host", "order": 2 }, "appearance": { "text": "帮助 H", "font_size": 25, "bg_color": "#425f95", "text_color": "#ffffff" }, "state": { "active": true, "visible": true, "interactable": true }, "overrides": { "touch": { "appearance": { "text": "帮助", "font_size": 28 }, "size": { "width": 144, "height": 80 } } }, "properties": { "点击": "仅当前玩家打开帮助；绑定待实现", "四种按钮状态": "待按官方属性另配" } },
+    { "id": "Modal", "name": "HelpModal", "type": "容器节点控件", "parent": "Root", "position": { "x": 0, "y": 0, "space": "parent-center" }, "size": { "width": 1600, "height": 900 }, "render": { "scope": "client-host", "order": 1 }, "appearance": { "bg_color": "#00000099" }, "state": { "active": false, "visible": true, "interactable": false }, "properties": { "点击穿透": "配置与实测待完成，透明度不作为输入拦截" } },
+    { "id": "Card", "name": "HelpCard", "type": "容器节点控件", "parent": "Modal", "position": { "x": 0, "y": 0, "space": "parent-center" }, "size": { "width": 800, "height": 450 }, "render": { "scope": "client-host", "order": 1 }, "appearance": { "bg_color": "#1b2943" }, "state": { "active": true, "visible": true, "interactable": false } },
+    { "id": "Title", "name": "HelpTitle", "type": "文本框控件", "parent": "Card", "position": { "x": 0, "y": 145, "space": "parent-center" }, "size": { "width": 660, "height": 60 }, "render": { "scope": "client-host", "order": 0 }, "appearance": { "text": "能量收集 · 操作帮助", "font_size": 34, "text_color": "#ffe0a5" }, "state": { "active": true, "visible": true, "interactable": false } },
+    { "id": "Body", "name": "HelpBody", "type": "文本框控件", "parent": "Card", "position": { "x": 0, "y": 0, "space": "parent-center" }, "size": { "width": 660, "height": 170 }, "render": { "scope": "client-host", "order": 1 }, "appearance": { "text": "双人合作，在 60 秒内收集 20 个能量。\n共享收集数量，帮助面板只对当前玩家显示。\n查看帮助时倒计时继续。", "font_size": 25, "text_color": "#ffffff" }, "state": { "active": true, "visible": true, "interactable": false } },
+    { "id": "Close", "name": "CloseButton", "type": "预设按钮控件", "parent": "Card", "position": { "x": 0, "y": -150, "space": "parent-center" }, "size": { "width": 180, "height": 68 }, "render": { "scope": "client-host", "order": 2 }, "appearance": { "text": "关闭", "font_size": 27, "bg_color": "#425f95", "text_color": "#ffffff" }, "state": { "active": true, "visible": true, "interactable": true }, "overrides": { "touch": { "size": { "width": 200, "height": 80 } } }, "properties": { "点击": "关闭本地 Modal；绑定待实现" } }
+  ],
+  "dependencies": [
+    { "from": "Root", "to": "asset:client_ui_container", "kind": "resource", "description": "客户端控件需要实际布局宿主；本演示不执行创建" },
+    { "from": "Root", "to": "script:CollectUI", "kind": "lifecycle", "description": "脚本挂在常驻根，关闭面板时不销毁宿主" },
+    { "from": "Count", "to": "var:collected_count", "kind": "data", "description": "读取服务端权威整数，示例数字为占位" },
+    { "from": "Time", "to": "var:remaining_seconds", "kind": "data", "description": "展示权威时间，界面不自行改变胜负" },
+    { "from": "Help", "to": "Modal", "kind": "event", "description": "点击后打开当前玩家的帮助，待 Lua 绑定" },
+    { "from": "Close", "to": "Modal", "kind": "event", "description": "点击后关闭面板，检查背景误触，待实测" }
+  ],
+  "sources": []
+}

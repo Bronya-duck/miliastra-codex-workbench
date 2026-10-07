@@ -1,0 +1,4 @@
+interface:
+  display_name: "千星界面布局"
+  short_description: "设计控件树、属性、位置和层次，校验布局合同并生成离线交互预览"
+  default_prompt: "$qx-ui 基于当前阶段设计界面，给出控件树、依赖、属性、位置和显示层次，校验结构化布局并生成预览，记录本项目结果。"

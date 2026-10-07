@@ -1,0 +1,4 @@
+interface:
+  display_name: "千星做玩法"
+  short_description: "分段制作千星奇域节点图方案，需要界面时整合完整控件布局与验证"
+  default_prompt: "$qx-build 帮我做一个怪物发现玩家后追击的方案。"

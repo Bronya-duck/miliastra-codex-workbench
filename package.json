@@ -1,0 +1,16 @@
+{
+  "name": "miliastra-codex-workbench",
+  "version": "0.4.0",
+  "description": "Codex workspace for Miliastra: grounded knowledge, staged project memory, layout contracts and evidence-based handoffs",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "configure": "node scripts/configure.mjs",
+    "demo": "node scripts/demo.mjs",
+    "check-release": "node scripts/check-release.mjs",
+    "test:knowledge": "node --test runtime/test/*.test.mjs"
+  }
+}

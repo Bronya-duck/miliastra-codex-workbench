@@ -1,0 +1,10 @@
+{
+  "name": "miliastra-codex",
+  "interface": { "displayName": "千星 Codex 工坊" },
+  "plugins": [{
+    "name": "miliastra-codex-workbench",
+    "source": { "source": "local", "path": "./plugin" },
+    "policy": { "installation": "AVAILABLE", "authentication": "ON_USE" },
+    "category": "Developer Tools"
+  }]
+}

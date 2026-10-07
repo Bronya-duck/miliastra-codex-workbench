@@ -1,0 +1,24 @@
+{
+  "name": "miliastra-codex-workbench-runtime",
+  "version": "0.4.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "setup": "node cli.mjs setup",
+    "sync": "node cli.mjs sync",
+    "doctor": "node cli.mjs doctor",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.0",
+    "@huggingface/transformers": "3.8.1",
+    "onnxruntime-node": "1.21.0",
+    "sharp": "0.34.5",
+    "cheerio": "1.1.2",
+    "turndown": "7.2.1",
+    "turndown-plugin-gfm": "1.0.2",
+    "zod": "3.25.76",
+    "undici": "7.30.0"
+  }
+}

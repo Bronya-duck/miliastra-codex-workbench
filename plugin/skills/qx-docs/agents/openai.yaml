@@ -1,0 +1,4 @@
+interface:
+  display_name: "千星查资料"
+  short_description: "查千星奇域官方节点参数、组件设置、教程和排障资料，附来源"
+  default_prompt: "$qx-docs 查一下嘲讽目标节点的参数和归属端。"

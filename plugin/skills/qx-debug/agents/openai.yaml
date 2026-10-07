@@ -1,0 +1,4 @@
+interface:
+  display_name: "千星排错"
+  short_description: "排查千星奇域节点图、界面控件和 Lua 故障，给出最小修复与验证"
+  default_prompt: "$qx-debug 帮我检查这个节点图为什么不生效。"

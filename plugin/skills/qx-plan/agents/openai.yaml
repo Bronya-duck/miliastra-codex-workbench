@@ -1,0 +1,4 @@
+interface:
+  display_name: "千星总规划"
+  short_description: "把总玩法或已有计划表拆成节点图、界面与脚本阶段，记录进度并续做"
+  default_prompt: "$qx-plan 在当前项目启用千星制作数据库，基于我的总玩法或已有计划分段规划，并在每段后更新记录。"

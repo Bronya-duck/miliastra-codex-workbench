@@ -1,0 +1,17 @@
+node_modules/
+runtime/node_modules/
+data/
+.local/
+dist/
+reports/
+**/.miliastra/
+.env
+.env.*
+*.log
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.onnx
+plugin/.mcp.json
+.DS_Store
+Thumbs.db

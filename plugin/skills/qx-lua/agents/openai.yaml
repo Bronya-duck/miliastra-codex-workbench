@@ -1,0 +1,4 @@
+interface:
+  display_name: "千星写Lua"
+  short_description: "编写千星奇域客户端 Lua 和控件交互，附配置、挂载及验证步骤"
+  default_prompt: "$qx-lua 写一个按钮点击后计数的 Lua 示例。"
