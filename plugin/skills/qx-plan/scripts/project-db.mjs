@@ -301,7 +301,11 @@ export function bindProject(root) {
   const content = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : '';
   const hasStart = content.includes(startMarker), hasEnd = content.includes(endMarker);
   assert(hasStart === hasEnd, '已有千星项目指引块不完整，请核对后再绑定');
-  const block = `${startMarker}\n## 千星奇域制作记录\n\n本项目已启用千星 Codex 工坊。千星任务先用 miliastra MCP 的 project_context 读取本项目 .miliastra/project.sqlite，核对有效依赖、产物变化和失败记录，再按需要使用 qx-plan、qx-docs、qx-build、qx-ui、qx-lua、qx-debug；各技能可自主查本地官方资料。总玩法或计划表以 qx-plan 保存；qx-build 涉及界面时结合 qx-ui 的完整控件树、依赖、属性、坐标和排序，生成布局合同与预览；qx-lua 复用相同 ID 和宿主。每段后 project_checkpoint 保存产物哈希、来源、失败与下一步，验收标明实际方法；静态检查不能证明玩法试玩通过。跨聊天用 project_handoff 生成续做提示。MCP 不可用时以 qx-plan 附带 project-db.mjs 读取并核对实际文件。官方资料仅明确更新时下载。数据库记录不授予编辑器操作权限，按当前会话授权执行；计划模式只读并输出待提交记录，回到可写模式再补录。\n${endMarker}`;
+  const block = [startMarker, '## 千星奇域制作入口', '',
+    '本项目已进入千星奇域制作，使用本机千星插件的官方知识库与本项目 .miliastra/project.sqlite。开始或换聊天继续千星任务时，先用 miliastra MCP 的 project_context 读取本项目目标、有效依赖、产物变化与失败记录。按任务使用 qx-plan、qx-docs、qx-build、qx-ui、qx-lua、qx-debug。', '',
+    '遇到不确定的节点参数、组件能力、控件属性、Lua 用法或报错时，先自主查询本地官方资料，无需用户再次要求查库：节点用 get_node_info，功能与故障用 rag_search/list_documents 定位后 get_document 读全文，客户端可用 list_client_documents/get_client_document。涉及图中连线、配置或演示步骤时实际读 get_document_image。复用仍有效的已核实来源；未能确认的结论记录为待验证，资料工具失败时说明连接问题。', '',
+    '总玩法或计划表以 qx-plan 保存；qx-build 涉及界面时结合 qx-ui 的控件树、依赖、属性、坐标和排序，生成布局合同与预览；qx-lua 沿用控件 ID 与宿主。每段计划、制作或排错后 project_checkpoint 保存产物哈希、资料来源、失败与下一步，验收标明实际方法；静态检查不能证明玩法试玩通过。跨聊天可用 project_handoff 生成续做提示。', '',
+    'MCP 不可用时以 qx-plan 附带 project-db.mjs 读取并核对实际文件。项目经验写入本项目数据库，官方资料仅在用户明确更新时下载。数据库记录不授予编辑器操作权限，按当前会话授权执行；计划模式只读并输出待提交记录，回到可写模式再补录。', endMarker].join('\n');
   let updated;
   if (hasStart) {
     const start = content.indexOf(startMarker), end = content.indexOf(endMarker);

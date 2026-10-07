@@ -2,6 +2,8 @@
 
 通过 `miliastra` MCP 查询当前活动快照。正文、代码、表格、原图和模型由用户首次准备；新安装若资料未准备，先报告缺项。结果中的 `snapshot_id` 是资料版本。
 
+制作遇到不确定的能力、参数、控件属性、Lua 调用或报错时，主动查询这些工具，无需用户重复要求“查数据库”。节点名用 `get_node_info`；功能与故障用 `rag_search` 或 `list_documents` 定位，再用 `get_document` 核对全文；客户端内容可用客户端工具筛选。已有来源版本有效且足以解决当前问题时可复用；资料无法确认的结论记录为待验证。
+
 - 用检索定位，再取全文核对关键接口、参数和配置。`similarity` 是相关性。
 - 节点的 `side`、`graph_type` 和来源一起核对；端为 `unknown` 或 `side_verified=false` 时继续查证。`too_many` 用准确标题/ID 收窄，`not_found` 换关键词。
 - 涉及图示连线、配置截图或演示步骤，实际调用 `get_document_image(image_id)`。小字用 `crop`；GIF 默认最多五帧，可用 `frame_indices` 继续读取。原图按需识别，文字未命中不代表图中没有信息。

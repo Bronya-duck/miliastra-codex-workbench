@@ -1,6 +1,6 @@
 {
   "name": "miliastra-codex-workbench",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "面向 Codex 的千星制作工坊：本地官方资料、阶段记忆、证据验收、界面合同和交互预览。",
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",

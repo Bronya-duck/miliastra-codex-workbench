@@ -1,6 +1,6 @@
 {
   "name": "miliastra-codex-workbench",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Codex workspace for Miliastra: grounded knowledge, staged project memory, layout contracts and evidence-based handoffs",
   "license": "MIT",
   "private": true,

@@ -8,7 +8,7 @@ import { DATA } from './paths.mjs';
 import path from 'node:path';
 import { registerWorkbenchTools } from './workbench/tools.mjs';
 
-const server=new McpServer({name:'miliastra-codex-workbench',version:'0.4.0'});
+const server=new McpServer({name:'miliastra-codex-workbench',version:'0.4.1'});
 registerWorkbenchTools(server);
 let knowledgePromise;
 let notifier;
