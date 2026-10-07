@@ -32,6 +32,8 @@
 先克隆到一个长期保留的位置，在仓库根目录执行：
 
 ```powershell
+git clone https://github.com/Bronya-duck/miliastra-codex-workbench.git
+cd miliastra-codex-workbench
 npm ci --prefix runtime
 node scripts/configure.mjs
 codex plugin marketplace add .
@@ -93,7 +95,7 @@ node scripts/export.mjs
 
 演示在 `.local/` 新建隔离项目，生成 10 个控件的 HUD/帮助面板、布局 JSON、交互 HTML 和续做提示，使用本项目原创示例，不触碰游戏工程。预览用于设计检查，不能模拟引擎输入、所有锚点变换或证明 Lua 已运行。
 
-`diagnose --offline` 通过真实 MCP 测试本地正文、Lua 文档、图片和语义查询，需已准备资料；也可 --config 指向已安装插件的配置。`export` 只导出允许发布的源码与文档，生成文件哈希清单。个人项目库、官方原文/图片、模型、依赖安装目录、机器路径配置均排除；也可以直接将本仓库源码提交 GitHub。公开仓库名称/账号由发布者决定，本文没有假造远程仓库地址。
+`diagnose --offline` 通过真实 MCP 测试本地正文、Lua 文档、图片和语义查询，需已准备资料；也可 --config 指向已安装插件的配置。`export` 只导出允许发布的源码与文档，生成文件哈希清单。个人项目库、官方原文/图片、模型、依赖安装目录、机器路径配置均排除；也可以直接将本仓库源码提交 GitHub。源码仓库为 [Bronya-duck/miliastra-codex-workbench](https://github.com/Bronya-duck/miliastra-codex-workbench)。
 
 更多说明：[工作流与工具](docs/workflow.md)、[架构](docs/architecture.md)、[验收记录](docs/validation.md)、[贡献](CONTRIBUTING.md)、[安全与资料范围](SECURITY.md)。
 
