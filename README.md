@@ -103,17 +103,3 @@ node scripts/export.mjs
 
 更多说明：[工作流与工具](docs/workflow.md)、[架构](docs/architecture.md)、[验收记录](docs/validation.md)、[贡献](CONTRIBUTING.md)、[安全与资料范围](SECURITY.md)。
 
-## 发布到自己的 GitHub
-
-确认发布清单通过后，把源码作为自己的仓库提交；保留 LICENSE 和 NOTICE 中的来源说明。不要把生成的 data/ 或个人 `.miliastra/` 加入仓库。GitHub 仓库可使用自己的名字与项目介绍，功能定位建议写为“面向 Codex 的千星奇域制作工坊”。
-
-```powershell
-# 在源码仓库内；已初始化的仓库可跳过 init
-git init -b main
-git add .
-git commit -m "Initial Miliastra Codex Workbench release"
-git remote add origin '<自己的GitHub仓库Git URL>'
-git push -u origin main
-```
-
-这几步由发布者明确执行，项目准备与本机安装不会自动创建远程仓库或上传文件。
